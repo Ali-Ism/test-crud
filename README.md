@@ -27,6 +27,8 @@ test-crud/
 │   │   │   ├── users.php
 │   │   │   └── users_yesterday.php
 │   │   └── index.php
+│   ├── scripts/
+│   │   └── run_users_yesterday.php  
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
@@ -201,3 +203,33 @@ Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
 Access-Control-Allow-Headers: Content-Type
 ```
 
+⏰ Tâche planifiée (Windows)
+
+Le projet inclut un script PHP permettant de récupérer la liste des utilisateurs créés la veille. Ce script peut être utilisé dans une tâche planifiée sous Windows.
+
+Emplacement du script
+
+backend/scripts/run_users_yesterday.php
+
+Fonction
+
+Appelle automatiquement l'API users_yesterday.php
+
+Enregistre le résultat dans un fichier JSON daté
+
+Utilisation avec le Planificateur de Tâches Windows
+
+Ouvrir le Planificateur de tâches
+
+Créer une nouvelle tâche
+
+Déclencheur : tous les jours à l'heure souhaitée (ex : 06:00)
+
+Action :
+
+Programme/script : C:\xampp\php\php.exe
+
+Arguments : C:\xampp\htdocs\Test_Crud\backend\scripts\run_users_yesterday.php
+
+Sauvegarder la tâche
+php C:/xampp/htdocs/Test_Crud/backend/scripts/run_users_yesterday.php
